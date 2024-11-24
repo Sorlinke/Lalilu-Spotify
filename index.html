@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lalilu - Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <svg viewBox="0 0 16 16" width="24" height="24">
+                <path fill="currentColor" d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.669 11.538a.498.498 0 01-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 01-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 01.166.686zm.979-2.178a.624.624 0 01-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 01-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 01.206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 11-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 11-.764 1.288z"/>
+            </svg>
+            Spotify
+        </div>
+        <nav class="nav-links">
+            <a id="active" href="../index.html">Home</a>
+            <a href="../album/album.html">Album</a>
+            <a href="/about/about.html">About</a>
+            <a href="/quotes/quotes.html">Quotes</a>
+            <a href="../all/all-photo.html">All (Photo 1)</a>
+            <a href="../all - Copy/all-photo.html">All (Photo 2)</a>
+        </nav>
+        <div class="right-section">
+            <select class="language-selector">
+                <option>English</option>
+                <option>Indonesia</option>
+                <option>Spanish</option>
+            </select>
+            <a href="#" class="sign-in-btn">Sign In</a>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-bg"></div>
+        <div class="content">
+            <h1>Lulu - Spotify Music</h1>
+            <p>This is how I give *** (coming soon), I hope you like it even though this is only a website. Just a website with a Taylor Swift theme, because she's one of the famous people you like</p>
+            <div class="buttons">
+                <button class="play-btn">▶ Play</button>
+                <button class="info-btn">ℹ More Info</button>
+            </div>
+        </div>
+    </main>
+
+    <section class="modalteks">
+        <!-- Tambahkan modal HTML ini setelah button play di dalam main class="hero" -->
+<div id="playModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Message for You</h2>
+        <div class="modal-text">
+            <p>"Bentar lagi udah mau 18 ni yaa, hahaha. selamat berjuang mengejar cita-cita ya kawan. Jangan banyak bersedih akan sesuatu hal, jangan terlalu dipikirin. Kalo lu butuh bantuan, hubungi aja 081319855561, nanti orang disitu akan mencoba membantu sebaik mungkin jika bisa. Gw gatau ya kondisi lu, siapa dan bagaimana, tapi gw harap Sehat-sehat dan selalu bahagia ya kawan. Gw siap menerima cerita yang tidak mengenakan atau mau nanya seseorang atau gimana tanya aja ya. Gw juga dengerin/mencerna kalo lu ngomong atau chat kok, walau kliatan kaya orang ga dengerin akakaka. Cerita/pertanyaan yang dirasa bisa menyinggung juga gapapa, tidak perlu dibatasi hahaha. Okeh gudluck yeah, sekali lagi sehat2 dan jangan bersedih(tapi bagus lah akhir-akhir ini terlihat gudfeeling sepertinya)."</p>
+            
+            <p>Nah yang ini adalah curhatan gw kenapa bikin ginian akaka
+                "Asli pasti ada beberapa hal muncul dalam pikiran lu, tolong jangan melihat gw aneh ya ka, moga gw ngasih ini tidak memperburuk kehidupan gw akakaka. Jujur aja gw dari dulu pengen ngasih sesuatu ke lu dari suatu hal yang gw bisa gtu. Dulu pengen kasih gambar, niatnya belajar dulu, tapi ternyata susah banget bikin muka orang bjir. Then karena gw ngeliat ada coding yang bisa bikin macem2, dan itu membuat gw tertarik, gw coba lah ya. Cuman waktu telah berlalu dan banyak hal terjadi kan ya, jadi bru skarang gw buat. Awalnya gw bener2 ga paham apa2 tapi pengen bisa buat suatu hal yang keren🤣, so lama2 gw belajar seiring waktu dan gw rasa makin bagus dan makin bagus. Mungkin website ini adalah website paling niat untuk saat ini yang gw buat dan tersetruktur mau bikin apa apa aja. Jadi, gw bikinin aja ini buat lu, smoga lu suka. Trus jg tadinya mau bulan januari 25 sekalian, cuman gw takut ga sempet/lupa karena bikinnya lama juga, mungkin gw kasih lagi versi update kalo ada, disitu mungkin ada tambahan"</p>
+        </div>
+    </div>
+</div>
+
+    </section>
+    <section class="body1">
+        <div class="player-container">
+            <div class="album-art">
+                <img src="Taylor Swift.jpg" alt="Album Cover">
+            </div>
+            <div class="player-content">
+                <div class="song-info">
+                    <div class="now-playing">Now Playing</div>
+                    <div class="song-title">Teardrops on My Guitar</div>
+                    <div class="artist">Taylor Swift</div>
+                </div>
+                <audio controls>
+                    <source src="Teardrops On My Guitar - Taylor Swift (Lyrics).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <section class="buttonbody">
+        <div id="particles-js"></div>
+    <div class="container-body">
+        <div class="title-button">Klik jika sudah pada waktunya<br>(klo lupa nnti gw ingetin)</div>
+        <button class="button" id="myButton" disabled>Click Tombol</button>
+        <div id="countdown"></div>
+    </div>
+    </section>
+
+    <script>
+        // Button timer functionality
+        function updateButton() {
+            const targetDate = new Date('2025-01-03T00:00:00').getTime();
+            const now = new Date().getTime();
+            const button = document.getElementById('myButton');
+            const countdown = document.getElementById('countdown');
+            
+            if (now >= targetDate) {
+                button.disabled = false;
+                countdown.innerHTML = "Tombol sudah bisa diklik!";
+                button.onclick = function() {
+                    window.location.href = "/teksHBD/uth.html";
+                }
+            } else {
+                const difference = targetDate - now;
+                
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                
+                countdown.innerHTML = `Waktu tersisa:<br>
+                    ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+            }
+        }
+
+        setInterval(updateButton, 1000);
+        updateButton();
+
+        // Tambahkan JavaScript ini ke file script kamu
+document.querySelector('.play-btn').addEventListener('click', function() {
+    const modal = document.getElementById('playModal');
+    modal.style.display = "block";
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    const modal = document.getElementById('playModal');
+    modal.style.display = "none";
+});
+
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('playModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});
+
+// Mencegah modal tertutup saat mengklik konten modal
+document.querySelector('.modal-content').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+        </script>
+</body>
+</html>

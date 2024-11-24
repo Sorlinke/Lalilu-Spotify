@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1DB954;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #00c853;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language-selector {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in-btn {
+    background: #1DB954;
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*Tampilan Home*/
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: url('background.svg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.play-btn, .info-btn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-btn {
+    background: white;
+    color: black;
+    border: none;
+}
+
+.info-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.play-btn:hover, .info-btn:hover {
+    transform: scale(1.05);
+}
+
+.play-btn:hover {
+    background-color: #1DB954;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+
+    .content h1 {
+        font-size: 36px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+}
+
+/*Tampilan Lagu TS tampil*/
+.body1 {
+    background: linear-gradient(135deg, #1e2024 0%, #18181d 100%);
+    color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.player-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 850px;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        0 0 30px rgba(31, 38, 135, 0.15) inset;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.player-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+    animation: lightRotate 20s linear infinite;
+}
+
+@keyframes lightRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.album-art {
+    width: 280px;
+    height: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(31, 38, 135, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.album-art:hover {
+    transform: translateY(-5px);
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.album-art:hover img {
+    transform: scale(1.05);
+}
+
+.player-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.song-info {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.song-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #fff, #a5a5a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.artist {
+    color: #a5a5a5;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+audio {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    background: transparent;
+}
+
+/* Custom audio controls styling */
+audio::-webkit-media-controls-panel {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+audio::-webkit-media-controls-play-button:hover,
+audio::-webkit-media-controls-mute-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+audio::-webkit-media-controls-timeline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    height: 4px;
+    transition: height 0.2s ease;
+}
+
+audio::-webkit-media-controls-timeline:hover {
+    height: 6px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.now-playing {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-size: 14px;
+    color: #64f4ac;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 768px) {
+    .player-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        gap: 30px;
+    }
+
+    .album-art {
+        width: 220px;
+        height: 220px;
+    }
+
+    .player-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .song-title {
+        font-size: 28px;
+    }
+
+    .artist {
+        font-size: 16px;
+    }
+
+    .now-playing {
+        position: relative;
+        top: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .album-art {
+        width: 180px;
+        height: 180px;
+    }
+
+    .song-title {
+        font-size: 24px;
+    }
+
+    .player-container {
+        padding: 20px;
+    }
+}
+
+
+.buttonbody {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container-body {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.title-button {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.button {
+    padding: 15px 40px;
+    font-size: 18px;
+    background-color: #00c853;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#countdown {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*Tampilan Kata2*/
+.body3 {
+    background: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+.container3 {
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.container3 h1 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+    color: #1DB954;
+}
+.container3 p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#active {
+    color: #1DB954;
+}
+
+/*Modal Teks*/
+/* Tambahkan CSS ini ke file style.css */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 8% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 700px;
+    max-height: 70vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s;
+}
+
+.modal h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-text {
+    line-height: 1.6;
+    color: #444;
+}
+
+.modal-text p {
+    margin-bottom: 15px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-100px); opacity: 0}
+    to {transform: translateY(0); opacity: 1}
+}
+
+/* Untuk layar mobile */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 15px;
+    }
+}
